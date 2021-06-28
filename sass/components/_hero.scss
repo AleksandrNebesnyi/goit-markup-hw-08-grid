@@ -1,0 +1,93 @@
+// Герой
+
+.hero {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $hero-bg-color;
+  background: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  );
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media screen and (max-width: 767px) {
+    max-width: $mobile;
+    min-height: 400px;
+    background-image: url("../images/hero/hero-mobile.jpg");
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url("../images/hero/hero-mobile@2x.jpg");
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+    min-height: 400px;
+    background-image: url("../images/hero/hero-tablet.jpg");
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url("../images/hero/hero-tablet@2x.jpg");
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 1600px;
+    min-height: 600px;
+
+    background-image: url("../images/hero/hero.jpg");
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url("../images/hero/hero@2x.jpg");
+    }
+  }
+}
+
+.hero__title {
+  display: block;
+  margin: 0 auto;
+  padding-top: 118px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 360px;
+  font-weight: 900;
+  font-size: 1.857em;
+  letter-spacing: 0.06em;
+  line-height: 1.61;
+  color: $wite-color;
+
+  @media screen and (min-width: $desktop) {
+    width: 696px;
+    padding-top: 200px;
+    font-size: 3.143em;
+    line-height: 1.4;
+  }
+}
+
+.hero__button {
+  @extend %button-primery;
+
+  transition: background-color $time $cubic, box-shadow $time $cubic;
+
+  &:hover,
+  &:focus {
+    background-color: $button-bg-hover-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}

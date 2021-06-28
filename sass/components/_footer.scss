@@ -1,0 +1,138 @@
+// Футер
+
+.footer {
+  background-color: $footer-bg;
+  @media screen and (max-width: $desktop) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+@media screen and (min-width: $tablet) {
+  .footer__container-tablet {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 60px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+    }
+  }
+}
+.footer__container-desktop {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: baseline;
+    padding: 60px 15px;
+  }
+}
+
+.footer__adress {
+  @media screen and (max-width: 767px) {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 61px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-left: 0px;
+    margin-right: 70px;
+  }
+}
+
+.footer__logo {
+  @extend %logo;
+  display: block;
+  margin-bottom: 20px;
+
+  &--part-first {
+    color: $accent-color;
+  }
+  &--part-two {
+    color: $wite-color;
+  }
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.footer-list__email,
+.footer-list__tel {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.71;
+  transition: color $time $cubic;
+}
+.footer-list__email--color,
+.footer-list__tel--color {
+  color: inherit;
+}
+
+.footer-list__address {
+  margin-bottom: 8px;
+
+  line-height: 1.71;
+  color: $wite-color;
+}
+
+.footer-list__email {
+  margin-bottom: 8px;
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.footer-list__tel:hover,
+.footer-list__tel:focus {
+  color: $accent-color;
+}
+
+.footer-link__title {
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.14;
+
+  color: $wite-color;
+}
+
+.footer-link {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-left: auto;
+    padding-right: 74px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-right: 0;
+    margin-right: 90px;
+  }
+}
+
+.footer-link__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-link__links:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-link__icon {
+  display: block;
+  padding: 12px;
+  border: none;
+  fill: $wite-color;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: background-color $time $cubic;
+
+  &:hover {
+    background-color: $accent-color;
+  }
+}

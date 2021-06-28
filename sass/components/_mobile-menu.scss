@@ -1,0 +1,121 @@
+.mobile-menu {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  font-weight: 500;
+  padding: 48px 40px;
+  letter-spacing: 0.02em;
+  background-color: $wite-color;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.16);
+  transition: box-shadow $time $cubic;
+  z-index: 10;
+
+  &.is-open {
+    opacity: 1;
+    display: block;
+    overflow-y: scroll;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+}
+
+.mobile-menu__list {
+  margin-bottom: 302px;
+  font-size: 2.857em;
+  line-height: 1.17;
+  color: $secondary-text-color;
+
+  @media screen and (min-width: $mobile) {
+    font-size: 40px;
+    line-height: 1.17;
+  }
+}
+
+.mobile-menu__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+.mobile-menu__link {
+  color: currentColor;
+}
+
+.mobile-menu__link--current {
+  color: $accent-color;
+}
+
+.mobile-menu__phone {
+  font-size: 2em;
+  line-height: 1.18;
+  color: $accent-color;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: $mobile) {
+    font-size: 34px;
+  }
+}
+
+.mobile-menu__email {
+  font-size: 1.428em;
+  line-height: 1.17;
+  color: $primery-text-color;
+  margin-bottom: 64px;
+
+  @media screen and (min-width: $mobile) {
+    font-size: 24px;
+  }
+}
+
+.mobile-menu__social {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.286em;
+  line-height: 1.22;
+  color: $accent-color;
+  justify-content: space-between;
+}
+.mobile-menu__phone--link,
+.mobile-menu__email--link {
+  color: inherit;
+}
+
+.mobile-menu__btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.is-open .menu-btn__icon {
+  z-index: 11;
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  fill: black;
+}
+
+.menu-btn__icon:hover,
+.menu-btn__icon:focus {
+  fill: $accent-color;
+}
+
+.is-open .menu-btn__icon-open {
+  display: none;
+}
+
+.menu-btn__icon-close {
+  display: none;
+
+  .is-open & {
+    display: block;
+  }
+}

@@ -1,0 +1,123 @@
+// Проекты портфолио
+
+.portfolio {
+  @media screen and (max-width: 1199px) {
+    padding: 60px 0;
+  }
+}
+.project {
+  display: grid;
+  gap: 30px;
+
+  @media screen and (min-width: $mobile) {
+    grid-template-rows: repeat(9, 450px);
+    grid-template-columns: repeat(1, 404px);
+  }
+  @media screen and (min-width: $tablet) {
+    grid-template-rows: repeat(5, 440px);
+    grid-template-columns: repeat(2, 354px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    grid-template-rows: repeat(3, 404px);
+    grid-template-columns: repeat(3, 370px);
+  }
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.card {
+  border: 1px solid $project-card-border-color;
+  &__image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  &__description {
+    padding: 0;
+    margin: 0;
+
+    font-size: $size-h3;
+    line-height: 1.9;
+    color: $primery-text-color;
+  }
+
+  &__content {
+    padding: 0 24px;
+  }
+
+  &___title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 4px;
+
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+
+    color: $secondary-text-color;
+  }
+
+  &:hover {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.06),
+      0 1px 1px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.card__text-hover {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  margin: 0px;
+  padding: 63px 24px;
+
+  font-size: $font-size-portfolio;
+  line-height: 1.56;
+  color: $secondary-text-color;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity $time $cubic, transform $time $cubic;
+}
+.card:hover .card__text-hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card__image::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  background-color: $portfolio-card-bg;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity $time $cubic, transform $time $cubic;
+}
+
+.card:hover .card__image::before {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card__title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 4px;
+
+  font-size: $font-size-portfolio;
+  line-height: 2;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+
+  color: $secondary-text-color;
+}

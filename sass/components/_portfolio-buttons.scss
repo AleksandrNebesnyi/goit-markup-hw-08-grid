@@ -1,0 +1,36 @@
+// Кнопки портфолио
+
+.portfolio__title {
+  @extend %visually_hidden;
+}
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
+}
+
+.button-list__button {
+  @extend %portfolio__button;
+}
+.button-list__button:hover {
+  color: $primery-bg-color;
+  background-color: $accent-color;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08),
+    0 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+.button-list__item {
+  @media screen and (max-width: 767px) {
+    margin-top: 15px;
+  }
+}
+.button-list__item:not(:last-child) {
+  margin-right: 8px;
+}

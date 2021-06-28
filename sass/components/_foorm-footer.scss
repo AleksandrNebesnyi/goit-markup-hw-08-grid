@@ -1,0 +1,65 @@
+// Форма футера
+
+.form-footer {
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+  }
+  &__container {
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.form-footer__title {
+  margin: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  line-height: 1.14;
+  color: $wite-color;
+}
+
+.form-footer__input {
+  padding: 15px 0 15px 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 4px;
+  border-color: rgba(255, 255, 255, 0.3);
+  outline: 1px;
+  background-color: $footer-bg;
+  color: $wite-color;
+  box-shadow: 4px 0 4px rgba(0, 0, 0, 0.15);
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: 450px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 12px;
+    width: 358px;
+    margin-bottom: 0;
+  }
+}
+.footer-form__button {
+  @extend %button-primery;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $wite-color;
+
+  &:hover {
+    background-color: $button-bg-hover-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+.footer-form__icon {
+  display: inline-block;
+  margin-left: 10px;
+  fill: $wite-color;
+}

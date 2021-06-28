@@ -1,0 +1,47 @@
+// Примеры работ
+
+.examples__container {
+  padding-top: 0;
+
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.examples__title {
+  margin-top: 0px;
+  margin-bottom: 50px;
+
+  font-size: $size-h2;
+  line-height: 1.2;
+  text-align: center;
+
+  color: $secondary-text-color;
+}
+
+.examples-list {
+  display: flex;
+
+  &__title {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-transform: uppercase;
+    width: 100%;
+    margin: 0px;
+    padding: 27px 0;
+    line-height: 1.14;
+    text-align: center;
+
+    color: $wite-color;
+    background-color: rgba(47, 48, 58, 0.8);
+  }
+}
+
+.examples-list__item {
+  position: relative;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}

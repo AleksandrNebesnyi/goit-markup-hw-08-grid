@@ -1,0 +1,102 @@
+// Наша команда
+
+.team {
+  background-color: $primery-bg-color;
+
+  @media screen and (max-width: $desktop) {
+    margin-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.18;
+
+    color: $secondary-text-color;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 2.571em;
+      line-height: 1.2;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.team-list {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(#{$neg} * #{$card-set-gap});
+    margin-top: calc(#{$neg} * #{$card-set-gap});
+  }
+}
+
+.team-list__item {
+  flex-basis: calc(100% / 1 - #{$card-set-gap});
+  margin-left: $card-set-gap;
+  margin-top: $card-set-gap;
+  background-color: $wite-color;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 1px 3px rgba(0, 0, 0, 0.12);
+
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc(100% / 2 - #{$card-set-gap});
+    margin-left: $card-set-gap;
+    margin-top: $card-set-gap;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc(100% / 4 - #{$card-set-gap});
+    margin-left: $card-set-gap;
+    margin-top: $card-set-gap;
+  }
+}
+
+.team-list__title {
+  margin: 0;
+  margin-top: 30px;
+  text-align: center;
+
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: $size-h3;
+  line-height: 1.2;
+
+  color: $secondary-text-color;
+}
+
+.team-list__description {
+  margin: 0;
+  text-align: center;
+
+  margin-bottom: 16px;
+
+  font-size: $size-h3;
+  line-height: 1.2;
+}
+
+.team-list__icon-block {
+  @include centeredFlex;
+}
+
+.team-list__icon {
+  width: 44px;
+  padding: 12px;
+  fill: $team-icon-color;
+  border-radius: 50%;
+  transition: background-color $time $cubic, fill $time $cubic;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    fill: $wite-color;
+  }
+}
